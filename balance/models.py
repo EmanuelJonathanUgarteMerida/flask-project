@@ -1,14 +1,17 @@
 import csv
 
 from balance import FICHERO
+from datetime import date
 
 
 class Movimiento:
-    def __init__(self, fecha, concepto, tipo, cantidad):
-        self.fecha = fecha
-        self.concepto = concepto
-        self.tipo = tipo
-        self.cantidad = cantidad
+    def __init__(self, linea):
+        # validamos fecha
+        self.fecha = date.fromisoformat(linea['fecha'])
+        self.hora = linea['hora']
+        self.concepto = linea['concepto']
+        self.tipo = linea['ingreso_gasto']
+        self.cantidad = linea['cantidad']
 
 
 class ListaMovimientos:
@@ -19,5 +22,4 @@ class ListaMovimientos:
         with open(FICHERO, 'r') as fichero:
             reader = csv.DictReader(fichero)
             for linea in reader:
-                self.movimientos.append(Movimiento(
-                    linea['fecha'], linea['concepto'], linea['ingreso_gasto'], linea['cantidad']))
+                self.movimientos.append(Movimiento(linea))

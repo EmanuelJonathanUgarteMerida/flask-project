@@ -1,5 +1,5 @@
-fecha,concepto,ingreso_gasto,cantidad
-01/01/2021,aguinaldos,I,750.0
-05/01/2021,reyes Marisa,G,24.0
-05/01/2021,gasolina,G,50.0
-05/01/2021,loteria de niño,I,1000.0
+fecha,hora,concepto,ingreso_gasto,cantidad
+2021-02-25,23:28,café,I,750.0
+2021-05-12,13:12,leche,G,24.0
+2021-04-07,14:45,gasolina,G,50.0
+2021-01-29,11:01,colacao,I,1000.0

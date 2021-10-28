@@ -1,0 +1,113 @@
+.encabezado {
+    background-color: maroon;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    padding-left: 20px;
+    font-size: xx-large;
+}
+
+nav {
+    background-color: brown;
+    color: white;
+    padding-left: 20px;
+    height: 25px;
+    line-height: 25px;
+}
+
+main {
+    max-width: 800px;
+    margin: auto;
+    /* margin: todos */
+    /* margin: sup-inf izq-dcha */
+    /* margin: sup dcha inf izq */
+    padding: 0 20px;
+}
+
+footer {
+    margin-top: 40px;
+    background-color: chocolate;
+    color: white;
+    padding: 20px;
+}
+
+table.paper {
+    width: 100%;
+}
+
+.tit-tabla {
+    border-bottom: solid 1px lightblue;
+    text-align: center;
+}
+
+table .errores {
+    color: red;
+    padding-left: 5rem;
+    font-size: small;
+    line-height: 12px;
+    position: relative;
+    top: -7px;
+}
+
+.movimientos td {
+    text-align: center;
+}
+
+.movimientos td.text-left {
+    text-align: left;
+}
+
+.movimientos td.text-right {
+    text-align: right;
+}
+
+.lista-vacia {
+    text-align: center;
+    padding: 20px;
+}
+
+nav a:link,
+nav a:visited {
+    color: white;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+
+/* Estilos para el formulario */
+
+.campo-formulario label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    padding-bottom: 0;
+    margin-top: .5rem;
+}
+
+.campo-formulario input:not([type="radio"]) {
+    width: 100%;
+}
+
+.campo-formulario .radio-label {
+    display: inline-block;
+    margin-right: 2rem;
+    margin-bottom: 7px;
+}
+
+.lista-errores,
+.errores-flash {
+    background-color: rgba(200, 0, 0, .25);
+    color: darkred;
+    border: solid 2px darkred;
+    padding: 2rem;
+    font-size: 1rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.icono-error {
+    margin-right: 1rem;
+}
