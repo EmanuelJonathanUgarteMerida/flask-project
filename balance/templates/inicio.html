@@ -1,45 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
+{%block head_title%}BZ9 Balance{%endblock head_title%}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BZ9 Balance</title>
-    <link rel="stylesheet" href="/static/css/flat-remix.css">
-    <link rel="stylesheet" href="/static/css/styles.css">
 
-</head>
-
-<body>
-    <header class="encabezado">Balance de gastos</header>
-    <nav>Inicio | Nuevo</nav>
-    <main>
-
-        <h1>Lista de Movimientos</h1>
-        <table class="paper">
-            <tr>
-                <th class="tit-tabla">Fecha</th>
-                <th class="tit-tabla">Hora</th>
-                <th class="tit-tabla">Concepto</th>
-                <th class="tit-tabla">I/G</th>
-                <th class="tit-tabla">Cantidad</th>
-            </tr>
-            {% for mov in movs %}
-            <tr>
-                <td>{{mov.fecha}}</td>
-                <td>{{mov.hora}}</td>
-                <td>{{mov.concepto}}</td>
-                <td>
-                    {%if mov.tipo == 'I'%} ingreso {%else%} gasto {%endif%}
-                </td>
-                <td>{{mov.cantidad}}</td>
-            </tr>
-            {% endfor %}
-        </table>
-    </main>
-    <footer>&copy; 2021 Bootcamp Zero IX Edición</footer>
-
-</body>
-
-</html>
+{%block contenido%}
+<h1>Lista de Movimientos</h1>
+<table class="paper">
+    <tr>
+        <th class="tit-tabla">Fecha</th>
+        <th class="tit-tabla">Hora</th>
+        <th class="tit-tabla">Concepto</th>
+        <th class="tit-tabla">I/G</th>
+        <th class="tit-tabla">Cantidad</th>
+    </tr>
+    {% for mov in movs %}
+    <tr>
+        <td>{{mov.fecha}}</td>
+        <td>{{mov.hora}}</td>
+        <td>{{mov.concepto}}</td>
+        <td>
+            {%if mov.tipo == 'I'%} ingreso {%else%} gasto {%endif%}
+        </td>
+        <td>{{mov.cantidad}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div class="paper">Esto es un bloque independiente</div>
+{%endblock contenido%}

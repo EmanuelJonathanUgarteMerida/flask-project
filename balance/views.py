@@ -10,3 +10,8 @@ def inicio():
     listaMovimientos = ListaMovimientos()
     listaMovimientos.leer_archivo()
     return render_template('inicio.html', movs=listaMovimientos.movimientos)
+
+
+@app.route('/alta')
+def alta():
+    return render_template('alta.html')
