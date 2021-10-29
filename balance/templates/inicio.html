@@ -1,9 +1,4 @@
-{% extends 'base.html' %}
-{%block head_title%}BZ9 Balance{%endblock head_title%}
-
-
-{%block contenido%}
-<h1>Lista de Movimientos</h1>
+{% extends 'base.html' %} {%block head_title%}BZ9 Balance{%endblock head_title%} {%block page_title%} Lista de Movimientos {%endblock page_title%} {%block contenido%} {{super()}}
 <table class="paper">
     <tr>
         <th class="tit-tabla">Fecha</th>

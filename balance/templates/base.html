@@ -8,19 +8,17 @@
     <title>{% block head_title %}BZ9 Balance{%endblock%}</title>
     <link rel="stylesheet" href="/static/css/flat-remix.css">
     <link rel="stylesheet" href="/static/css/styles.css">
-
 </head>
 
 <body>
-    <header class="encabezado">Balance de gastos</header>
-    <nav>
-        <a href="">Inicio</a> | <a href="/alta">Nuevo</a>
-    </nav>
+    {%include 'components/header.html'%} {%include 'components/navbar.html'%}
     <main>
         {%block contenido%}
+        <h1>{%block page_title%} {%endblock page_title%}
+        </h1>
         {%endblock%}
     </main>
-    <footer>&copy; 2021 Bootcamp Zero IX Edición</footer>
+    {%include 'components/footer.html'%}
 
 </body>
 

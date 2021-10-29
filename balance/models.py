@@ -1,5 +1,6 @@
 import csv
 import datetime
+from os import write
 
 from balance import FICHERO
 from datetime import date, datetime
@@ -8,7 +9,7 @@ from datetime import date, datetime
 class Movimiento:
     def __init__(self, linea):
         # validamos fecha
-        self.errores = []
+        """self.errores = []
         ahora = datetime.now()
         try:
             self.fecha = date.fromisoformat(linea['fecha'])
@@ -16,10 +17,11 @@ class Movimiento:
                 self.errores.append(
                     'la fecha no puede ser superior al la fecha actual')
         except ValueError:
-            self.errores.append('Formato de fecha erróneo')
+            self.errores.append('Formato de fecha erróneo')"""
+        self.fecha = linea['fecha']
         self.hora = linea['hora']
         self.concepto = linea['concepto']
-        self.tipo = linea['ingreso_gasto']
+        self.tipo = linea['tipo']
         self.cantidad = linea['cantidad']
 
 
@@ -32,3 +34,11 @@ class ListaMovimientos:
             reader = csv.DictReader(fichero)
             for linea in reader:
                 self.movimientos.append(Movimiento(linea))
+
+    def escribir_archivo(self):
+        with open(FICHERO, 'w') as fichero:
+            writer = csv.DictWriter(
+                fichero, self.movimientos[0].__dict__.keys())
+            writer.writeheader()
+            for mov in self.movimientos:
+                writer.writerow(mov.__dict__)
